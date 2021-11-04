@@ -11,9 +11,13 @@ export class AppComponent {
   tasks: string[] = ['task 1', 'task 2', 'task 3'];
 
   addTask() {
-    if (this.newTask !== '') {
+    if (this.newTask.trim().length) {
       this.tasks.push(this.newTask);
       this.newTask = '';
     }
+  }
+
+  onDeleteTask(i: number) {
+    this.tasks.splice(i,1);
   }
 }
