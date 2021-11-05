@@ -1,6 +1,10 @@
 <form (submit)="addTask($event)">
-  <label><input name="task" [(ngModel)]="task"/></label>
-  <button>Add</button>
+  <div class="task-form">
+    <div class="task-field">
+      <label><input name="task" [(ngModel)]="task" class="task-input" placeholder="Add new task"/></label>
+    </div>
+    <button>Add</button>
+  </div>
 </form>
 
 <app-task *ngFor="let task of tasks; let i = index"

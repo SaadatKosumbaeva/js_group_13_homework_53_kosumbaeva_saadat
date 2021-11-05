@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +23,7 @@ export class AppComponent {
   }
 
   onDeleteTask(i: number) {
-    this.tasks.splice(i,1);
+    this.tasks.splice(i, 1);
   }
 
   changeTask(index: number, newTask: string) {

@@ -1,0 +1,21 @@
+.task-form {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  padding: 15px 10px;
+  margin: 0 0 15px 0;
+}
+
+.task-field {
+  flex-grow: 1;
+  margin: 0 10px 0 0;
+}
+
+.task-input {
+  width: 100%;
+  border: none;
+}
+
+.task-input:focus {
+  outline: none;
+}

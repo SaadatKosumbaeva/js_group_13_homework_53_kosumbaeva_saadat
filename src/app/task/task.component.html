@@ -1,4 +1,13 @@
 <form>
-  <label><input name="task" [value]="task" (input)="onTaskChange($event)" class="task-field"/></label>
-  <button (click)="onDeleteClick()">Delete</button>
+  <div class="task-form">
+    <div class="task-field">
+      <label><input name="task" [value]="task" class="task-input"
+                    (input)="onTaskChange($event)"
+                    (focus)="onInputFocus()"
+                    (blur)="onInputBlur()"
+                    [ngStyle]="borderSettings()"
+      /></label>
+    </div>
+    <button (click)="onDeleteClick()">Delete</button>
+  </div>
 </form>
