@@ -19,3 +19,8 @@
 .task-input:focus {
   outline: none;
 }
+
+.input-text {
+  color: grey;
+  text-decoration: line-through black;
+}

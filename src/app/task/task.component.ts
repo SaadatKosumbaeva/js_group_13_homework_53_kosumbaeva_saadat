@@ -9,7 +9,10 @@ export class TaskComponent {
   @Input() task = '';
   @Output() taskChange = new EventEmitter<string>();
   @Output() delete = new EventEmitter();
+  @Output() taskCheck = new EventEmitter<boolean>();
+
   focus = false;
+  checked = false;
 
   onDeleteClick() {
     this.delete.emit();
@@ -30,5 +33,14 @@ export class TaskComponent {
 
   borderSettings() {
     return this.focus ? {borderBottom: '1px solid black'} : null;
+  }
+
+  onInputChecked() {
+    this.checked = !this.checked;
+    this.taskCheck.emit(this.checked);
+  }
+
+  textDecorationSettings() {
+    return this.checked ? 'task-input input-text' : 'task-input';
   }
 }

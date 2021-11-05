@@ -13,6 +13,7 @@ export class AppComponent {
     {task: 'task 2'},
     {task: 'task 3'},
   ];
+  completedTasks: { task: string }[] = [];
 
   addTask(event: Event) {
     event.preventDefault();
@@ -28,5 +29,14 @@ export class AppComponent {
 
   changeTask(index: number, newTask: string) {
     this.tasks[index].task = newTask;
+  }
+
+  checkTask(index: number, checked: boolean) {
+    if (checked) {
+      this.completedTasks.push(this.tasks[index]);
+    } else {
+      const completedArrIndex = this.completedTasks.indexOf(this.tasks[index]);
+      this.completedTasks.splice(completedArrIndex, 1);
+    }
   }
 }
