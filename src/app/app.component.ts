@@ -7,17 +7,26 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'homework53-app';
-  newTask: string = '';
-  tasks: string[] = ['task 1', 'task 2', 'task 3'];
+  task = '';
+  tasks = [
+    {task: 'task 1'},
+    {task: 'task 2'},
+    {task: 'task 3'},
+  ];
 
-  addTask() {
-    if (this.newTask.trim().length) {
-      this.tasks.push(this.newTask);
-      this.newTask = '';
+  addTask(event: Event) {
+    event.preventDefault();
+    if (this.task.trim().length) {
+      this.tasks.push({task: this.task});
+      this.task = '';
     }
   }
 
   onDeleteTask(i: number) {
     this.tasks.splice(i,1);
+  }
+
+  changeTask(index: number, newTask: string) {
+    this.tasks[index].task = newTask;
   }
 }

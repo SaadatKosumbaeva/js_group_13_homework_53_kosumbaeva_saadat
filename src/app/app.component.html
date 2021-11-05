@@ -1,7 +1,10 @@
-<label><input name="addTask" [(ngModel)]="newTask"/></label>
-<button (click)="addTask()">Add</button>
+<form (submit)="addTask($event)">
+  <label><input name="task" [(ngModel)]="task"/></label>
+  <button>Add</button>
+</form>
 
 <app-task *ngFor="let task of tasks; let i = index"
-          [task]="task"
+          [task]="task.task"
           (delete)="onDeleteTask(i)"
+          (taskChange)="changeTask(i, $event)"
 ></app-task>

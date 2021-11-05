@@ -1,4 +1,4 @@
-<div>
-  <label><input name="task" [value]="task"/></label>
+<form>
+  <label><input name="task" [value]="task" (input)="onTaskChange($event)" class="task-field"/></label>
   <button (click)="onDeleteClick()">Delete</button>
-</div>
+</form>
